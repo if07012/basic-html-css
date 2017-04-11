@@ -14,6 +14,20 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Muli, sans-serif;
+            color: #444;
+        }
+    </style>
 </head>
 
 <body>
@@ -68,39 +82,40 @@
                     <p>Itulah salah satu cara pengembangan sebuah <i>website</i></p>
                 </article>
             </div>
-        <div>
-            <h2>Form Task</h2>
-            <form action="/" method="post">
-                <div>
-                    <span>Task</span>
-                    <input type="text" required>
-                </div>
-                <div>
-                    <span>Jenis Task</span>
-                    <select>
+            <div>
+                <h2>Form Task</h2>
+                <form action="/" method="post">
+                    <div>
+                        <span>Task</span>
+                        <input type="text" required>
+                    </div>
+                    <div>
+                        <span>Jenis Task</span>
+                        <select>
                         <option value="0">Todo                        
                         </option>
                         <option value="1">Memo</option>
                         <option value="2">Information</option>
                     </select>
-                </div>
-                <div>
-                    <span>Deskripsi</span>
-                    <textarea></textarea>
-                </div>
-                 <div>
-                    <span>Publish</span>
-                    <input type="checkbox">
-                </div> <div>
-                    <span>Effort Tast</span>
-                    <input type="number" required>
-                </div>
-                <div>
-                    <div><button >Simpan</button></div>
-                    <div><button >Batal</button></div>
-                </div>
-            </form>
-        </div>
+                    </div>
+                    <div>
+                        <span>Deskripsi</span>
+                        <textarea></textarea>
+                    </div>
+                    <div>
+                        <span>Publish</span>
+                        <input type="checkbox">
+                    </div>
+                    <div>
+                        <span>Effort Tast</span>
+                        <input type="number" required>
+                    </div>
+                    <div>
+                        <div><button>Simpan</button></div>
+                        <div><button>Batal</button></div>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 </body>
