@@ -97,6 +97,30 @@
             color: #95b001;
             text-transform: uppercase;
         }
+
+        form {
+            border: 1px solid grey;
+            padding: 10px;
+            margin: 10px;
+        }
+        form .form-input
+        {
+            padding: 5px;
+        }
+        form .form-input span{
+            display: block;
+            font-weight: bold;
+                        
+        }
+        form .form-input button,
+        form .form-input input,
+        form .form-input select,
+        form .form-input textarea{
+            display: block;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -156,11 +180,11 @@
             <div>
                 <h2>Form Task</h2>
                 <form action="/" method="post">
-                    <div>
+                    <div class="form-input">
                         <span>Task</span>
                         <input type="text" required>
                     </div>
-                    <div>
+                    <div class="form-input">
                         <span>Jenis Task</span>
                         <select>
                         <option value="0">Todo                        
@@ -169,19 +193,19 @@
                         <option value="2">Information</option>
                     </select>
                     </div>
-                    <div>
+                    <div class="form-input">
                         <span>Deskripsi</span>
                         <textarea></textarea>
                     </div>
-                    <div>
+                    <div class="form-input">
                         <span>Publish</span>
                         <input type="checkbox">
                     </div>
-                    <div>
+                    <div class="form-input">
                         <span>Effort Tast</span>
                         <input type="number" required>
                     </div>
-                    <div>
+                    <div class="form-input">
                         <div><button>Simpan</button></div>
                         <div><button>Batal</button></div>
                     </div>
