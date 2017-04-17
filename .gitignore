@@ -1,1 +1,6 @@
 .vscode/symbols.json
+.vscode/launch.json
+.vscode/tasks.json
+Dockerfile
+/bin
+/obj
