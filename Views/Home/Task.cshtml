@@ -1,10 +1,11 @@
 @model basic_html_css.Models.ViewModels.TaskViewModel
 <div>
     <h2>Form Task</h2>
-    <form action="@Url.Content("~/Home/Task")" method="post">
+    <form action="@Url.Content("~/Home/TaskPost")" method="post">
         <div class="form-input">
             <span>Task</span>
-            @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
+            @Html.HiddenFor(n=>n.Id)            
+            @Html.EditorFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
         </div>
         <div class="form-input">
             <span>Jenis Task</span>
@@ -36,3 +37,22 @@
         </div>
         <h2 style="color:green">@Model.Message</h2>
     </form>
+</div>
+
+    <table> 
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+        @foreach(var i in Model.List)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td><a href="/Home/EditTask/?id=@i.Id">Edit</a>
+                    <a href="/Home/DeleteTask/?id=@i.Id">Delete</a></td>
+            </tr>
+        }
+        
+    </table>

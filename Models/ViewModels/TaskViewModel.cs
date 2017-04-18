@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace basic_html_css.Models.ViewModels
 {
     public class TaskViewModel
@@ -9,6 +11,6 @@ namespace basic_html_css.Models.ViewModels
         public bool Publish { get; set; }
         public int EffortTask { get; set; }
         public string Message { get; internal set; }
-
+        public DbSet<Task> List { get; internal set; }
     }
 }
