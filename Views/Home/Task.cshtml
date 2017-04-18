@@ -3,11 +3,11 @@
     <form action="@Url.Content("~/Home/Task")" method="post">
         <div class="form-input">
             <span>Task</span>
-            <input type="text" required>
+            <input type="text" id="Name" name="Name" required>
         </div>
         <div class="form-input">
             <span>Jenis Task</span>
-            <select>
+            <select id="JenisTask" name="JenisTask">
                         <option value="0">Todo                        
                         </option>
                         <option value="1">Memo</option>
@@ -16,15 +16,15 @@
         </div>
         <div class="form-input">
             <span>Deskripsi</span>
-            <textarea></textarea>
+            <textarea id="Deskripsi" name="Deskripsi" ></textarea>
         </div>
         <div class="form-input">
             <span>Publish</span>
-            <input type="checkbox">
+            <input id="Publish" name="Publish" type="checkbox">
         </div>
         <div class="form-input">
             <span>Effort Tast</span>
-            <input type="number" required>
+            <input id="EffortTask" name="EffortTask" type="number" required>
         </div>
         <div class="form-input">
             <div class="col-2"><input type="submit" class="button button-success" value="Save"/></div>
