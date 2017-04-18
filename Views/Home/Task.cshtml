@@ -1,9 +1,10 @@
+@model basic_html_css.Models.ViewModels.TaskViewModel
 <div>
     <h2>Form Task</h2>
     <form action="@Url.Content("~/Home/Task")" method="post">
         <div class="form-input">
             <span>Task</span>
-            <input type="text" id="Name" name="Name" required>
+            @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
         </div>
         <div class="form-input">
             <span>Jenis Task</span>
@@ -16,18 +17,22 @@
         </div>
         <div class="form-input">
             <span>Deskripsi</span>
-            <textarea id="Deskripsi" name="Deskripsi" ></textarea>
+            @Html.TextAreaFor(m => m.Deskripsi)
+            
         </div>
         <div class="form-input">
             <span>Publish</span>
-            <input id="Publish" name="Publish" type="checkbox">
+            @Html.CheckBoxFor(m => m.Publish)
         </div>
         <div class="form-input">
-            <span>Effort Tast</span>
-            <input id="EffortTask" name="EffortTask" type="number" required>
+            <span>Effort Task</span>            
+            @Html.TextBoxFor(m => m.EffortTask, new { type = "number",@placeholder = "Effort Task" , required = "required"})
+
+
         </div>
         <div class="form-input">
             <div class="col-2"><input type="submit" class="button button-success" value="Save"/></div>
             <div class="col-2"><input type="button" class="button" value="Batal"/></div>
         </div>
+        <h2 style="color:green">@Model.Message</h2>
     </form>

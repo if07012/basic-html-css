@@ -26,11 +26,18 @@ namespace basic_html_css.Controllers
         }
 
         [HttpPost]
-        public IActionResult Task(basic_html_css.Models.Task task)
+        public IActionResult Task(basic_html_css.Models.ViewModels.TaskViewModel task)
         {
-            context.Tasks.Add(task);
-            context.SaveChanges();
-            return View();
+            var taskLocal = new basic_html_css.Models.Task();
+            taskLocal.Deskripsi = task.Deskripsi;
+            taskLocal.EffortTask=task.EffortTask;
+            taskLocal.JenisTask=task.JenisTask;
+            taskLocal.Name= task.Name;
+            taskLocal.Publish = task.Publish;
+            context.Tasks.Add(taskLocal);
+            context.SaveChanges();            
+            task.Message ="Data berhasil di simpan";
+            return View(task);
         }
         public IActionResult About()
         {
