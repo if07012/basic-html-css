@@ -1,71 +1,229 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - basic_html_css</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Belajar HTML</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Muli, sans-serif;
+            color: #444;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        a {
+            cursor: pointer;
+            display: block;
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        header {
+            width: 200px;
+            height: 100%;
+            float: left;
+            position: relative;
+            z-index: 99;
+        }
+
+        header nav ul li {
+            border-bottom: 1px solid #42454D;
+            padding-left: 48px;
+            transition: all 0.6s;
+            border-top: 1px solid #2E3036;
+        }
+
+        header nav ul li:hover {
+            background-color: #454952;
+            transition: all 0.6s;
+            border-bottom: 1px solid #797979;
+        }
+
+        header nav ul li:hover a {
+            color: #fff;
+            transition: all 0.6s;
+        }
+
+        header nav ul li a {
+            line-height: 55px;
+            font-size: 18px;
+            position: relative;
+            letter-spacing: 1px;
+            transition: all 0.6s;
+        }
+
+        .bckg {
+            background-color: #383B42;
+            box-shadow: -4px 0px 10px rgba(14, 14, 14, 0.48) inset;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: normal;
+            color: #F6F6EF;
+            margin: 0;
+            background-color: #34363A;
+            border-bottom: 1px solid rgba(101, 116, 134, 0.57);
+            font-size: 21pt;
+            width: 200px;
+            color: #95b001;
+            text-transform: uppercase;
+        }
+
+        form {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        form .form-input {
+            padding: 5px;
+        }
+
+        form .form-input span {
+            display: block;
+            font-weight: bold;
+        }
+
+        form .form-input button,
+        form .form-input input,
+        form .form-input select,
+        form .form-input textarea {
+            display: block;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        form .form-input input[type="text"],
+        form .form-input input[type="number"] {
+            display: block;
+            width: 100%;
+            height: 34px;
+            font-weight: 100;
+            padding-left: 6px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        form .form-input select {
+            display: block;
+            width: 100%;
+            height: 34px;
+            font-weight: 100;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        form .form-input select option {
+            font-weight: bold;
+            color: #66F;
+        }
+
+        form .form-input textarea {
+            font-weight: 100;
+            color: #555;
+            min-height: 150px;
+            padding-left: 6px;
+        }
+
+        form .form-input input[type="checkbox"] {
+            width: 20px;
+            text-align: left;
+        }
+
+        .form-input {
+            float: left;
+            width: 100%;
+            position: relative;
+            padding: 5px;
+        }
+
+        .col-2 {
+            width: 50%;
+            float: left;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .button-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">basic_html_css</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <span class="bckg"></span>
+    <header>
+        <h1>Welcome In My App</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="todo.html">Todo</a>
+                </li>
+                <li>
+                    <a href="message.html">Message</a>
+                </li>
+                <li>
+                    <a href="activity.html">Activity</a>
+                </li>
+                <li>
+                    <a href="setting.html">Settings</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - basic_html_css</p>
-        </footer>
-    </div>
-
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
+    </main>
 </body>
+
 </html>

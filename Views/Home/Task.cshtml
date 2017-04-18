@@ -1,0 +1,33 @@
+<div>
+    <h2>Form Task</h2>
+    <form action="@Url.Content("~/Home/Task")" method="post">
+        <div class="form-input">
+            <span>Task</span>
+            <input type="text" required>
+        </div>
+        <div class="form-input">
+            <span>Jenis Task</span>
+            <select>
+                        <option value="0">Todo                        
+                        </option>
+                        <option value="1">Memo</option>
+                        <option value="2">Information</option>
+                    </select>
+        </div>
+        <div class="form-input">
+            <span>Deskripsi</span>
+            <textarea></textarea>
+        </div>
+        <div class="form-input">
+            <span>Publish</span>
+            <input type="checkbox">
+        </div>
+        <div class="form-input">
+            <span>Effort Tast</span>
+            <input type="number" required>
+        </div>
+        <div class="form-input">
+            <div class="col-2"><input type="submit" class="button button-success" value="Save"/></div>
+            <div class="col-2"><input type="button" class="button" value="Batal"/></div>
+        </div>
+    </form>
