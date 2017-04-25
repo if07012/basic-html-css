@@ -22,7 +22,7 @@ namespace basic_html_css.Controllers
         }
         public IActionResult Task(basic_html_css.Models.ViewModels.TaskViewModel model)
         {
-            model.List = context.Tasks;
+            model.List = context.Tasks.Where(n=>n.Name.ToLower().Contains(model.SearchBy.ToLower())).ToList();
             model.Id = 4;
             return View(model);
         }
@@ -68,7 +68,7 @@ namespace basic_html_css.Controllers
                 context.Tasks.Add(taskLocal);
             context.SaveChanges();
             task.Message = "Data berhasil di simpan";
-            task.List = context.Tasks;
+            task.List = context.Tasks.Where(n=>n.Name.ToLower().Contains(task.SearchBy.ToLower()));
             return View("Task",task);
         }
         public IActionResult About()

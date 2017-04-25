@@ -5,6 +5,7 @@
         <div class="form-input">
             <span>Task</span>
             @Html.HiddenFor(n=>n.Id)            
+            @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
             @Html.EditorFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
         </div>
         <div class="form-input">
@@ -37,6 +38,16 @@
         </div>
         <h2 style="color:green">@Model.Message</h2>
     </form>
+     <form action="@Url.Content("~/Home/Task")" method="post">
+     <div class="form-input">
+            <span>Search Name</span>            
+            @Html.TextBoxFor(m => m.SearchBy, new { @placeholder = "Name" })            
+            
+        </div>
+        <div class="form-input">
+           <input type="submit" class="button button-success" value="Cari"/>
+        </div>
+     </form>
 </div>
 
     <table style="width:100%"> 
