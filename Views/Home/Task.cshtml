@@ -1,12 +1,11 @@
 @model basic_html_css.Models.ViewModels.TaskViewModel
 <div>
     <h2>Form Task</h2>
-    <form action="@Url.Content("~/Home/TaskPost")" method="post">
+    <form action="" method="#">
         <div class="form-input">
             <span>Task</span>
             @Html.HiddenFor(n=>n.Id)            
             @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
-            @Html.EditorFor(m => m.Name, new { @placeholder = "Name", required = "required" })            
         </div>
         <div class="form-input">
             <span>Jenis Task</span>
@@ -33,37 +32,21 @@
 
         </div>
         <div class="form-input">
-            <div class="col-2"><input type="submit" class="button button-success" value="Save"/></div>
+            <div class="col-2"><input type="button" class="button button-success" value="Save"/></div>
             <div class="col-2"><input type="button" class="button" value="Batal"/></div>
         </div>
-        <h2 style="color:green">@Model.Message</h2>
     </form>
-     <form action="@Url.Content("~/Home/Task")" method="post">
-     <div class="form-input">
-            <span>Search Name</span>            
-            @Html.TextBoxFor(m => m.SearchBy, new { @placeholder = "Name" })            
-            
-        </div>
-        <div class="form-input">
-           <input type="submit" class="button button-success" value="Cari"/>
-        </div>
-     </form>
 </div>
 
-    <table style="width:100%"> 
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th></th>
-        </tr>
-        @foreach(var i in Model.List)
+<script>    
+    $(document).ready(function(){
+    $(".button-success").on('click',function(){
+        $("input,select").each(function()
         {
-            <tr>
-                <td>@i.Id</td>
-                <td>@i.Name</td>
-                <td><a href="/Home/EditTask/?id=@i.Id">Edit</a>
-                    <a href="/Home/DeleteTask/?id=@i.Id">Delete</a></td>
-            </tr>
-        }
-        
-    </table>
+            var element =$(this);
+            if(element.attr('id')!==undefined)
+            alert(element.attr('id')+" : "+element.val());
+        });
+    });
+    });
+</script>
